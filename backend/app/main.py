@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
 from app.api.project import router as project_router
+from app.api.document import router as document_router
 
 app = FastAPI(
     title="AI Test Generation Platform",
@@ -8,6 +9,7 @@ app = FastAPI(
 )
 
 app.include_router(project_router)
+app.include_router(document_router)
 
 
 @app.get("/")
